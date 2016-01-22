@@ -1,5 +1,5 @@
 
-|PVM| Aika|  Ajankäytön kohde.|
+|PVM| Aika|  Ajankäytön kohde|
 |----------|--------|-------------------------------------------------------------|
 |21.1.2016|   7h   |Github- repositorion luominen, Netbeans projektin luominen.|
 |----------|--------|-------------------------------------------------------------|
