@@ -9,5 +9,5 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). vakioihin viita
 - potenssilaskut, neliöjuuri.
 - muistissa olevien vakioiden listaus. 
 - käyttäjä voi laittaa laskimen muistiin omia lukuja.
--   - onnistuu jos käyttäjän valitsema kirjain/sana ei ole varattu toiselle luvulle.
+   * onnistuu jos käyttäjän valitsema kirjain/sana ei ole varattu toiselle luvulle.
 
