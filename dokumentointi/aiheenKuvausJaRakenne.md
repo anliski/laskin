@@ -1,1 +1,3 @@
-Aihe: Yksinkertainen laskin joka laskee peruslaskutoimitukset(+,-,*,/) ja muistaa muutamat vakiot kuten piin.
+**Aihe:** Yksinkertainen laskin joka laskee peruslaskutoimitukset kokonais ja desimaaliluvuille (+,-,*,/) ja muistaa muutamat yleisimmin käytetyt vakiot (esim. piin). Laskin osaa myös potenssilaskut ja ottaa neliöjuuren.
+
+**Käyttäjät:** Kuka tahansa. 
