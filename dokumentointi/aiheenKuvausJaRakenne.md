@@ -11,3 +11,6 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). vakioihin viita
 - käyttäjä voi laittaa laskimen muistiin omia lukuja.
    * onnistuu jos käyttäjän valitsema kirjain/sana ei ole varattu toiselle luvulle.
 
+
+![Alt text](/home/anya/Desktop/Luokkakaavio1.png)
+
