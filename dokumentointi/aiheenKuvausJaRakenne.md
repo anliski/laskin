@@ -12,5 +12,5 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). vakioihin viita
    * onnistuu jos käyttäjän valitsema kirjain/sana ei ole varattu toiselle luvulle.
    * 
 
-![Alt text](/home/anya/Desktop)
+![Alt text](/home/anya/Desktop/Luokkakaavio1.png)
 
