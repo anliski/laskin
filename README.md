@@ -1,3 +1,3 @@
-# laskin
- laskin laskee
-muokkaus
+# Laskin
+
+[aiheen kuvaus](dokumentaatio/aiheenKuvausJaMääritelmä.md)
