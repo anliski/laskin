@@ -1,3 +1,3 @@
 # Laskin
 
-[aiheen kuvaus](dokumentaatio/aiheenKuvausJaMääritelmä.md)
+[aiheen kuvaus](https://github.com/anliski/laskin/blob/master/dokumentointi/aiheenKuvausJaRakenne.md)
