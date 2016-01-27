@@ -6,4 +6,4 @@
 
 
 
-[Tuntuikirjanpito](https://github.com/anliski/laskin/blob/master/dokumentointi/Tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/anliski/laskin/blob/master/dokumentointi/Tuntikirjanpito.md)
