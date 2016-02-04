@@ -3,6 +3,7 @@ package laskin.laskin;
 
 
 import static laskin.laskin.Laskin.onkoNumero;
+import static laskin.laskin.Laskin.onkoOperaattoriValikossa;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,4 +38,29 @@ public class LaskinTest {
                 
         
     }
+//2.
+    @Test
+    public void onkoOperaattoriValikossaPalauttaaTrueJosOn(){
+        
+        String plus = "+";
+        String root = "r";
+
+        
+        assertEquals(onkoOperaattoriValikossa(plus), true);
+        assertEquals(onkoOperaattoriValikossa(root), true);
+                
+        
+    }
+//3.
+    @Test
+    public void onkoOperaattoriValikossaPalauttaaFalseJosEiOle(){
+        String kirjain = "w";
+        String merkit = "o9";
+        
+        assertEquals(onkoOperaattoriValikossa(kirjain), false);
+        assertEquals(onkoOperaattoriValikossa(merkit), false);
+                
+        
+    }    
+    
 }
