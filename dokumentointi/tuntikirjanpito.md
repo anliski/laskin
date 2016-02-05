@@ -11,4 +11,4 @@
 |30.1.2016|  6h  | Vakiomuistioluokan aloittaminen. Checkstyle raportti, tyylivirheiden poistaminen.|
 |31.1.2016|  7h  | Vakiomuistioluokan jatkaminen ja testaus.|
 |4.2.2016|  2h  | Vakiomuistioluokka loppuun. Checkstyle raportti.|
-|5.2.2016|  6.5h  | Valinta luokka ja testaus. Pit-raportti. Luokkakaavion päivittäminen. Koodikatselmointi.|
+|5.2.2016|  9h  | Valinta luokka ja testaus. Pit-raportti. Luokkakaavion päivittäminen. Koodikatselmointi. TUI ja Main|
