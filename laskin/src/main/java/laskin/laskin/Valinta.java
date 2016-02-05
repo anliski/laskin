@@ -3,16 +3,11 @@ package laskin.laskin;
 
 public class Valinta {
 
-    String merkkijono;
     Vakiomuistio muistio = new Vakiomuistio("atm", 101325);
     
     public Valinta(){
     
     }
-    public Valinta(String merkkijono){
-        this.merkkijono = merkkijono;   
-    }
-
 
     public String loppu(){
         return "hei hei!";
