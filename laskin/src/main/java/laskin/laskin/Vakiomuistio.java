@@ -3,11 +3,9 @@ package laskin.laskin;
 
 import java.util.HashMap;
 
-public class Vakiomuistio {
+public final class Vakiomuistio {
    
     HashMap<String, Double> muistio = new HashMap<>();
-    String avain;
-    double arvo = 0;
 
  
     
@@ -15,8 +13,7 @@ public class Vakiomuistio {
 
     public Vakiomuistio(String lisattava, double arvo) {
     
-        this.avain = lisattava;
-        this.arvo = arvo;
+        lisaaVakioMuistioon(lisattava, arvo);
    
         lisaaValmiitVakiot();
     
@@ -27,6 +24,7 @@ public class Vakiomuistio {
 
         muistio.put("pii", 3.14159);
         muistio.put("R", 8.31446);
+        muistio.put("e", 2.718281);
 
     }
     
@@ -36,28 +34,26 @@ public class Vakiomuistio {
     }
     
     public boolean tutkiOnkoVakioMuistissa(String avain) {
-        if (muistio.containsKey(avain)) {
-            return true;
-        } else {
-            return false;
-        }
+       
+        return muistio.containsKey(avain);
     } 
 
 
     public void lisaaVakioMuistioon(String avain, double arvo) {
+       
         muistio.put(avain, arvo);
            
     }
     
-
     
     @Override
     public String toString() {
         
-        String kaikki = "";
+        String kaikki = "\n";
         for (String key: muistio.keySet()) {
-
-            kaikki = kaikki + "\n" + key + " = " + muistio.get(key);
+            
+            
+            kaikki = kaikki + key + " = " + muistio.get(key) + "\n";
     
         }
         return kaikki;
@@ -65,7 +61,3 @@ public class Vakiomuistio {
     
 
 }
-// lisää vakioita
-// testit laskutoimitus
-// testit laskin
-// testit vakio

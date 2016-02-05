@@ -13,115 +13,90 @@ public class Laskin {
         Scanner lukija = new Scanner(System.in);
         double luku1;
         double luku2;
-        String valinta = "";
-        Vakiomuistio muistio = new Vakiomuistio("", 0);
+        String toiminta = "";
+        
+        Valinta valinta = new Valinta();
         
         System.out.println("help listaa toiminnot.");
         
-        while (!"loppu".equals(valinta)) {
+        while (!"loppu".equals(toiminta)) {
             System.out.println("valitse toiminto");
-            valinta = lukija.nextLine();
-            
-            if ("loppu".equals(valinta)) {
-                System.out.println("Hei hei!");
+            toiminta = lukija.nextLine();
+                    
+            if ("loppu".equals(toiminta)) {
+                System.out.println(valinta.loppu());
             }
         
-            if ("help".equals(valinta)) {
-                System.out.println("lasku: suorita laskutoimitus");
-                System.out.println("vakio: lisää vakio muistiin");
-                System.out.println("loppu: lopettaa");
-                System.out.println("listaa: listaa muistion vakiot");
+            if ("help".equals(toiminta)) {
+                System.out.println(valinta.help());
             }
 
-            if ("lasku".equals(valinta)) {
+            if ("lasku".equals(toiminta)) {
                 
                 String ekaluku = lukija.nextLine();
-
-                if (onkoNumero(ekaluku) == true) {
-                    luku1 = Double.parseDouble(ekaluku); 
-                } else {
-                    if (muistio.tutkiOnkoVakioMuistissa(ekaluku) == true) { 
-                        luku1 = muistio.palautaVakionArvo(ekaluku);
-                    } else {
-                        System.out.println("Muistiossa ei ole ensimmäisen luvun symbolia.");
-                        continue;
-                    } 
-                }
                 
-                String operaattori = lukija.nextLine();
-                if (onkoOperaattoriValikossa(operaattori) == false) {
-                    System.out.println("valitse + - / * ^ r");
+                if (valinta.voikoLuvunMaarittaa(ekaluku) == true){
+                    luku1 = valinta.maaritaLuku(ekaluku);
+                } else {
+                    System.out.println("Muistiossa ei ole ensimmäisen luvun symbolia");
                     continue;
+                    
+                }
+
+                String operaattori = lukija.nextLine();
+                    
+                    if (valinta.onkoOperaattoriValikossa(operaattori) == false) {
+                        System.out.println("valitse + - / * ^ r");
+                        continue;
                 }
                     
                 String tokaluku = lukija.nextLine();
-                if (onkoNumero(tokaluku) == true) {
-                    luku2 = Double.parseDouble(tokaluku); 
+
+                if (valinta.voikoLuvunMaarittaa(tokaluku) == true){
+                    luku2 = valinta.maaritaLuku(tokaluku);
                 } else {
-                    if (muistio.tutkiOnkoVakioMuistissa(tokaluku) == true) {
-                        luku2 = muistio.palautaVakionArvo(tokaluku);
-                    } else {
-                        System.out.println("Muistiossa ei ole toisen luvun symbolia.");
-                        continue;
-                    }
-                }
-                
+                    System.out.println("Muistiossa ei ole toisen luvun symbolia");
+                    continue;
+                    
+                }                
+
                 Laskutoimitus laskutoimitus = new Laskutoimitus(luku1, luku2, operaattori);
                 laskutoimitus.laske();
         
                 System.out.println(laskutoimitus.annaTulos()); 
             }
-            if ("vakio".equals(valinta)) {
+            if ("vakio".equals(toiminta)) {
             
             
                 System.out.println("Anna symboli.");
                 String symboli = lukija.nextLine();
-                if (muistio.tutkiOnkoVakioMuistissa(symboli) == true || onkoNumero(symboli) == true) {
+
+                
+                if (valinta.tutkiOnkoVakioMuistissa(symboli) == true || valinta.onkoNumero(symboli) == true) {
                     System.out.println("Symboli on jo käytössä tai symboli oli numero");
                     continue;
-                }
+                } 
                 
                 System.out.println("Anna arvo");
                 String vakionarvo = lukija.nextLine();
-            
-                if (onkoNumero(vakionarvo) == true) {
-                    double arvo = Double.parseDouble(vakionarvo);
-                    muistio.lisaaVakioMuistioon(symboli, arvo);
+                
+                
+                if (valinta.onkoNumero(vakionarvo) == true) {
+                    valinta.lisaaVakioMuistioon(symboli, Double.parseDouble(vakionarvo));
                     System.out.println("lisäys onnistui"); 
                 } else { 
                     System.out.println("Arvo ei kelpaa"); 
                 }
             }
             
-            if ("listaa".equals(valinta)) {
-                System.out.println(muistio.toString());
-               
-                
-                
+            if ("listaa".equals(toiminta)) {
+                System.out.println(valinta.listaaKaikki());
+
             }   
                 
         }
       
     }
 
-    
-    public static boolean onkoNumero(String luku) {  
-        try { 
-            double k =  Double.parseDouble(luku); 
-        } catch (NumberFormatException n) {  
-            return false; 
-        }  
-        return true; 
-    }  
-    
-    public static boolean onkoOperaattoriValikossa(String merkki) {
-   
-        if ("+-/*^r".contains(merkki)) {
-            return true;
-        } else {
-            return false;   
-        }
-    }
-    //huomioi +-tapaus
-    
+  
 }

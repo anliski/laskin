@@ -115,7 +115,7 @@ public class LaskutoimitusTest {
             laskutoimitus1.laske();
         }
         catch(IndexOutOfBoundsException e){
-        thrown = true;}
+            thrown = true;}
         
         assertTrue(thrown);
  

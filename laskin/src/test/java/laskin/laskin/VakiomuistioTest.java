@@ -2,9 +2,7 @@
 package laskin.laskin;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,44 +12,62 @@ public class VakiomuistioTest {
     }
 
     private Vakiomuistio muistio;
-
+    
     
     @Before
     public void setUp() {
  
-    muistio = new Vakiomuistio("aaa", 4);    
+    muistio = new Vakiomuistio("symboli", 4);    
+    muistio.lisaaVakioMuistioon("uusi", 32.5);
     }
     
     @After
     public void tearDown() {
     }
 
-  //1.
+//1.    
     @Test
-    public void  KonstruktoriAsettaaArvotOikein(){
-    
+    public void  TutkiiOnkoVakiotMuistissaOikein(){
+        
+        
+        assertTrue(muistio.tutkiOnkoVakioMuistissa("symboli"));
+        assertTrue(muistio.tutkiOnkoVakioMuistissa("uusi"));
+        assertTrue(muistio.tutkiOnkoVakioMuistissa("pii"));
+        assertFalse(muistio.tutkiOnkoVakioMuistissa("puuttuva"));        
 
-        assertEquals(muistio.avain, "aaa");
-        assertEquals(muistio.arvo, 4.0, 0.001);
+    }
+//2.    
+    @Test
+    public void  palauttaOikeanVakionArvon(){
+    
+        assertEquals(muistio.palautaVakionArvo("symboli"), 4.0, 0.00001);
+        assertEquals(muistio.palautaVakionArvo("uusi"), 32.5, 0.00001);
+        assertEquals(muistio.palautaVakionArvo("pii"), 3.14159, 0.000001);
+        
+   
+    }
+    
+    
+//3. 
+    @Test
+    public void lisaaVakionMuistiin(){
+        
+        muistio.lisaaVakioMuistioon("x", 5.39);
+        muistio.lisaaVakioMuistioon("y", 7.311);
+        
+        assertEquals(muistio.palautaVakionArvo("x"), 5.39, 0.00001);
+        assertEquals(muistio.palautaVakionArvo("y"), 7.311, 0.00001);
 
     }
-    
+  
+  
+//4. 
     @Test
-    public void  EiAnnaListataSamannimistaVakiota(){
+    public void toStringPalauttaaOikeassaMuodossa(){
         
-    }
-    
-    @Test
-    public void  EiAsetaVakionSymboliksiNumeerisiaArvoja(){
-        
-    }
-    
-    
-    
-    @Test
-    public void  lisaaVakionMuistiin(){
-        
-        
+        Vakiomuistio muistio1 = new Vakiomuistio("a", 4); 
+        assertEquals(muistio1.toString(), "\na = 4.0\npii = 3.14159\nR = 8.31446\ne = 2.718281\n");
+ 
     }
     
     
