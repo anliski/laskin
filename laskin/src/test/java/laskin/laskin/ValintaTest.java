@@ -63,7 +63,7 @@ public class ValintaTest {
         
  
     }   
-//3.
+//4.
     @Test
     public void tutkiOnkoVakioMuistiossaPalauttaaOikein(){
         assertTrue(valinta.tutkiOnkoVakioMuistissa("R"));
@@ -72,6 +72,7 @@ public class ValintaTest {
         
  
     }   
+//5.
     @Test
     public void palauttaaMuistiostaOikeanVakionArvon(){
         
@@ -79,7 +80,7 @@ public class ValintaTest {
         assertEquals(valinta.palautaMuistiostaVakionArvo("R"), 8.31446, 0.00001);
 
     } 
-
+//6.
     @Test
     public void VakionLisaaminenMuistioonOnnistuu(){
         
@@ -92,7 +93,7 @@ public class ValintaTest {
         assertEquals(valinta.palautaMuistiostaVakionArvo("uusi"), 5.7, 0.00001);
         assertEquals(valinta.palautaMuistiostaVakionArvo("vakio"), 80, 0.00001);
     } 
-    
+//7. 
     @Test
     public void VoikoLuvunMaarittaa(){
         
@@ -105,6 +106,7 @@ public class ValintaTest {
         assertTrue(valinta.tutkiOnkoVakioMuistissa("uusi")); 
 
     }
+//8.
     @Test
     public void maarittaLukuMaarittaaOikein(){
         assertEquals(valinta.maaritaLuku("9.886"), 9.886, 0.00001);
@@ -116,6 +118,7 @@ public class ValintaTest {
         
         
     }
+//9.    
     @Test
     public void listaaKaikkiListaaOikein(){
         assertEquals(valinta.listaaKaikki(),"\npii = 3.14159\nR = 8.31446\ne = 2.718281\natm = 101325.0\n");

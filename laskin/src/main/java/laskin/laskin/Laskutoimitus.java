@@ -73,7 +73,7 @@ public class Laskutoimitus {
     }
     public void juuri() {
 
-        if (this.luku1 >= 0) { 
+        if (this.luku1 > 0) { 
             this.tulos = Math.pow(this.luku1 , (1 / this.luku2));
         } else {
             throw new IndexOutOfBoundsException("Ei ole reaalista juurta");

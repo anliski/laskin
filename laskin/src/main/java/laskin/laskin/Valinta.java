@@ -1,6 +1,8 @@
 
 package laskin.laskin;
 
+
+
 public class Valinta {
 
     Vakiomuistio muistio = new Vakiomuistio("atm", 101325);

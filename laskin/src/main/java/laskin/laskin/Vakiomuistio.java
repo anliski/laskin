@@ -6,7 +6,6 @@ import java.util.HashMap;
 public final class Vakiomuistio {
    
     HashMap<String, Double> muistio = new HashMap<>();
-
    
 
     public Vakiomuistio(String lisattava, double arvo) {
