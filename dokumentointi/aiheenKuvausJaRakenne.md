@@ -15,5 +15,5 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). Vakioihin viita
 
 **Luokkakaavio:** 
 
-![Alt text](https://github.com/anliski/laskin/blob/master/dokumentointi/Luokkakaavio1.png)
+![Alt text](https://github.com/anliski/laskin/blob/master/dokumentointi/laskimenuokkakaavio.png)
 
