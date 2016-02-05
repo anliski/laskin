@@ -5,19 +5,19 @@ public class Valinta {
 
     Vakiomuistio muistio = new Vakiomuistio("atm", 101325);
     
-    public Valinta(){
+    public Valinta() {
     
     }
 
-    public String loppu(){
+    public String loppu() {
         return "hei hei!";
     }
 
-    public String help(){
+    public String help() {
         return "\nlasku: suorita laskutoimitus\nvakio: lisää vakio muistiin\nloppu: lopettaa\nlistaa: listaa muistion vakiot\n";
     }        
     
-    public boolean tutkiOnkoVakioMuistissa(String symboli){
+    public boolean tutkiOnkoVakioMuistissa(String symboli) {
         return muistio.tutkiOnkoVakioMuistissa(symboli);
         
     }
@@ -34,23 +34,23 @@ public class Valinta {
         
     }
     
-    public boolean voikoLuvunMaarittaa(String luku){
-        return tutkiOnkoVakioMuistissa(luku)== true || onkoNumero(luku)== true;
+    public boolean voikoLuvunMaarittaa(String luku) {
+        return tutkiOnkoVakioMuistissa(luku) == true || onkoNumero(luku) == true;
     }
     
-    public double maaritaLuku(String luku){
+    public double maaritaLuku(String luku) {
         double numero;
         if (onkoNumero(luku) == true) {
             numero = Double.parseDouble(luku); 
-            } else {
-                numero = palautaMuistiostaVakionArvo(luku);
+        } else {
+            numero = palautaMuistiostaVakionArvo(luku);
         }
         return numero;
     }
     
-    public boolean onkoNumero(String luku){
+    public boolean onkoNumero(String luku) {
         try { 
-            double k =  Double.parseDouble(luku); 
+            double k = Double.parseDouble(luku); 
         } catch (NumberFormatException n) {  
             return false; 
         }  
@@ -59,10 +59,10 @@ public class Valinta {
     
     public boolean onkoOperaattoriValikossa(String merkki) {
    
-        return "+".equals(merkki)||"-".equals(merkki)||"*".equals(merkki)||"/".equals(merkki)||"^".equals(merkki)||"r".equals(merkki);
+        return "+".equals(merkki) || "-".equals(merkki) || "*".equals(merkki) || "/".equals(merkki) || "^".equals(merkki) || "r".equals(merkki);
     }
     
-    public String listaaKaikki(){
+    public String listaaKaikki() {
         
         return muistio.toString();
     }

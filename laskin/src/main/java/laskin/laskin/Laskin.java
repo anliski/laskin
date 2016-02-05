@@ -35,7 +35,7 @@ public class Laskin {
                 
                 String ekaluku = lukija.nextLine();
                 
-                if (valinta.voikoLuvunMaarittaa(ekaluku) == true){
+                if (valinta.voikoLuvunMaarittaa(ekaluku) == true) {
                     luku1 = valinta.maaritaLuku(ekaluku);
                 } else {
                     System.out.println("Muistiossa ei ole ensimmäisen luvun symbolia");
@@ -45,14 +45,14 @@ public class Laskin {
 
                 String operaattori = lukija.nextLine();
                     
-                    if (valinta.onkoOperaattoriValikossa(operaattori) == false) {
-                        System.out.println("valitse + - / * ^ r");
-                        continue;
+                if (valinta.onkoOperaattoriValikossa(operaattori) == false) {
+                    System.out.println("valitse + - / * ^ r");
+                    continue;
                 }
                     
                 String tokaluku = lukija.nextLine();
 
-                if (valinta.voikoLuvunMaarittaa(tokaluku) == true){
+                if (valinta.voikoLuvunMaarittaa(tokaluku) == true) {
                     luku2 = valinta.maaritaLuku(tokaluku);
                 } else {
                     System.out.println("Muistiossa ei ole toisen luvun symbolia");
