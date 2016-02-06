@@ -15,5 +15,6 @@ public class Laskin {
     
     public void kauta() {
         teksti.kautto();
+        //testikommentti
     }
 }
