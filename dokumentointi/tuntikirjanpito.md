@@ -12,3 +12,7 @@
 |31.1.2016|  7h  | Vakiomuistioluokan jatkaminen ja testaus.|
 |4.2.2016|  2h  | Vakiomuistioluokka loppuun. Checkstyle raportti.|
 |5.2.2016|  9h  | Valinta luokka ja testaus. Pit-raportti. Luokkakaavion päivittäminen. Koodikatselmointi. TUI ja Main|
+|8.2.2016|  2h  | Graafisen käyttöliittymän suunnittelu.|
+|9.2.2016|  6.25h  | Nappuloiden, panelien, tekstikentän tekemisen opettelu.|
+|11.2.2016|  7.5h  | Nappuloiden, panelien ja tekstikentän järjestely. Toiminnallisuuden lisäämisen harjoittelu.|
+|12.2.2016|  6h  | Laskin luokka loppuun, JavaDocin aloittaminen, checkstyle ja pit raportti.|
