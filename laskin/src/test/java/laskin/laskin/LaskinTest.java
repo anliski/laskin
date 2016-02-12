@@ -133,7 +133,7 @@ public class LaskinTest{
  
     }
     @Test
-    public void raamitOnNaakyvissa(){
+    public void valikkoPaneliinLisataanOikeaMaaraNappeja(){
         laskuri.kayta();
         assertEquals(laskuri.valikko.getComponentCount(), 4);
  
