@@ -57,6 +57,7 @@ public class Laskin {
         teksti.add(tekstikentta, c1);
         lisaaPaneliRaameihin(teksti);
     }
+ 
         
     public void luoValikko() {
         

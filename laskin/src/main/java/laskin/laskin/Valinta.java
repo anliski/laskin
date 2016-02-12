@@ -20,7 +20,7 @@ public class Valinta {
     }
 
     public String help() {
-        return "\nlasku: suorita laskutoimitus\nvakio: lisää vakio muistiin\nloppu: lopettaa\nlistaa: listaa muistion vakiot\n";
+        return "\nlasku: suorita laskutoimitus\nvakio: lisää vakio muistiin\nlistaa: listaa muistion vakiot\n";
     }        
 /**
  * Metodi tutkii löytyykö vakiota muistiosta.
