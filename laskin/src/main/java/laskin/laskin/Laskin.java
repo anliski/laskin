@@ -25,15 +25,13 @@ public class Laskin {
     public Laskin() {
         graafinen = new GUI();
         //teksti = new TUI();
-    }
-    
+    }    
     public void kayta() {
         
         luoUusiLaskin();
         graafinen.kaytto();
         //teksti.kaytto();
     }
-    
     public void luoUusiLaskin() {
         
         reunat = new JFrame("Laskin");
@@ -60,8 +58,7 @@ public class Laskin {
     }
  
         
-    public void luoValikko() {
-        
+    public void luoValikko() { 
         valikko = new JPanel(new GridBagLayout());
         valikko.setBounds(5, 5 , 700 , 50);
         valikko.setBackground(Color.darkGray);
