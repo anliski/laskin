@@ -13,8 +13,9 @@ public class Laskin {
     
     public JFrame reunat;
     public JPanel numeropaneli;
+    public JPanel teksti;
+    public JPanel valikko;
     public JTextField tekstikentta;
-    public Valinta valinta;
     public ArrayList<JButton> numeronapit = new ArrayList<>();
     public ArrayList<JButton> valikkonapit = new ArrayList<>();
     public ArrayList<JButton> operaattorinapit = new ArrayList<>();
@@ -48,7 +49,7 @@ public class Laskin {
     public void luoTekstikentta() {
         
         tekstikentta = new JTextField("", 12);
-        JPanel teksti = new JPanel(new GridBagLayout());
+        teksti = new JPanel(new GridBagLayout());
         teksti.setBounds(5, 60 , 700 , 50);
         teksti.setBackground(Color.WHITE);
         GridBagConstraints c1 = new GridBagConstraints();
@@ -61,7 +62,7 @@ public class Laskin {
         
     public void luoValikko() {
         
-        JPanel valikko = new JPanel(new GridBagLayout());
+        valikko = new JPanel(new GridBagLayout());
         valikko.setBounds(5, 5 , 700 , 50);
         valikko.setBackground(Color.darkGray);
         GridBagConstraints c2 = new GridBagConstraints();

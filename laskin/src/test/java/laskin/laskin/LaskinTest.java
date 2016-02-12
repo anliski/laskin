@@ -64,14 +64,86 @@ public class LaskinTest{
         assertEquals(paneli.getComponentCount(), 10);
     }
     
-
-    
-    
-    
-
-    
-
- 
+    @Test
+    public void valikkonappejaOikeaMaara(){
         
+        laskuri.teeValikkoNapit();
+        
+        assertEquals(laskuri.valikkonapit.size(), 4);
+        
+    }
     
+    @Test
+    public void OperaattoriNappejaOikeaMaara(){
+       
+        laskuri.teeOperaattoriNappulat();
+        
+        assertEquals(laskuri.operaattorinapit.size(), 9);
+        
+    }
+    @Test
+    public void laskurinKaytaMetodiLuoOperaattoriNapit(){
+       
+        laskuri.kayta();
+        
+        assertEquals(laskuri.operaattorinapit.size(), 9);
+        
+    }
+
+    @Test
+    public void operaattoriNappulatLisataanPaneliin(){
+        laskuri.kayta();
+  
+        JPanel paneli = new JPanel(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+       
+        laskuri.lisaaOperaattoriNappulat(c, paneli);
+       
+       
+         assertEquals(paneli.getComponentCount(), 9);
+        
+    }
+    
+    @Test
+    public void numeropaneliinLisataanNumeroJaOperaattoriNapitKunLaskintaKaytetaan(){
+        laskuri.kayta();
+        assertEquals(laskuri.numeropaneli.getComponentCount(), 19);
+        
+ 
+    }
+    @Test
+    public void raamitOikeanKokoisia(){
+        laskuri.kayta();
+        assertEquals(laskuri.reunat.getHeight(), 400);
+        assertEquals(laskuri.reunat.getWidth(), 700);
+ 
+    }
+
+    @Test
+    public void tesktiPaneliinLisataanTekstiKantta(){
+        laskuri.kayta();
+        assertEquals(laskuri.teksti.getComponent(0), laskuri.tekstikentta);
+ 
+    }
+    
+    @Test
+    public void raamitOnNakyvissa(){
+        laskuri.kayta();
+        assertEquals(laskuri.reunat.isVisible(), true);
+ 
+    }
+    @Test
+    public void raamitOnNaakyvissa(){
+        laskuri.kayta();
+        assertEquals(laskuri.valikko.getComponentCount(), 4);
+ 
+    }
+
 }
+    
+    
+    
+    
+
+    
+    
