@@ -1,7 +1,7 @@
 
 **Tuntikirjanpito**
 
-|PVM| Aika|  Ajankäytön kohde|
+|PVM| Tunnit|  Ajankäytön kohde|
 |:----------:|:--------:|:-------------------------------------------------------------|
 |21.1.2016|   7h   |Github- repositorion luominen. Netbeans projektin luominen.|
 |22.1.2016|  0.25h  | Aihemäärittelyn kirjoittaminen.|
@@ -15,4 +15,4 @@
 |8.2.2016|  2h  | Graafisen käyttöliittymän suunnittelu.|
 |9.2.2016|  6.25h  | Nappuloiden, panelien, tekstikentän tekemisen opettelu.|
 |11.2.2016|  7.5h  | Nappuloiden, panelien ja tekstikentän järjestely. Toiminnallisuuden lisäämisen harjoittelu.|
-|12.2.2016|  6h  | Laskin luokka loppuun, JavaDocin aloittaminen, checkstyle ja pit raportti.|
+|12.2.2016|  6h  | Laskin luokka loppuun, JavaDocin aloittaminen, checkstyle ja pit raportti, luokkakaavion päivitys|
