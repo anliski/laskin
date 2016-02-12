@@ -5,12 +5,16 @@ import java.util.Scanner;
 import laskin.laskin.Laskutoimitus;
 import laskin.laskin.Valinta;
 
+/**
+ * TUI luokka sisältää tekstikäyttöliittymän.
+ */
+
 public class TUI {
 
     public TUI(){
     
     }
-    public void kautto() {
+    public void kaytto() {
     
         Scanner lukija = new Scanner(System.in);
         double luku1;

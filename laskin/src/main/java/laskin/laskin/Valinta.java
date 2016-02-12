@@ -1,7 +1,11 @@
 
 package laskin.laskin;
 
-
+/**
+ * Valinta luokka tarjoaa metodit käyttäjän antamien valintojen käsittelyyn, 
+ * mahdollisuuden tallentaa vakioita ja niiden arvoja vakiomuistioon, ja käyttäjän antamien syötteiden oikeellisuuden tarkistamissen.
+ * 
+ */
 
 public class Valinta {
 
@@ -18,6 +22,14 @@ public class Valinta {
     public String help() {
         return "\nlasku: suorita laskutoimitus\nvakio: lisää vakio muistiin\nloppu: lopettaa\nlistaa: listaa muistion vakiot\n";
     }        
+/**
+ * Metodi tutkii löytyykö vakiota muistiosta.
+ * HUOM: Käyttää vakiomuistion metodia.
+ * 
+ * @param  symboli Käyttäjän antama symboli.
+ * 
+ * @return true jos symboli löytyy muistiosta/false jos symbolia ei löydy.
+ */
     
     public boolean tutkiOnkoVakioMuistissa(String symboli) {
         return muistio.tutkiOnkoVakioMuistissa(symboli);

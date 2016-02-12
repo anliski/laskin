@@ -9,18 +9,21 @@ import static org.junit.Assert.*;
 
 public class LaskinTest {
     
+    private Laskin laskuri;
+    
     public LaskinTest() {
     }
     
     @Before
     public void setUp() {
+    laskuri.luoUusiLaskin();
     }
     
     @After
     public void tearDown() {
     }
     
-   
+ 
         
     
 }

@@ -1,6 +1,9 @@
 
 package laskin.laskin;
 
+/**
+ * Laskutoimitus luokka tarjoaa metodit laskutoimitusten suorittamista varten, sekä metodin tuloksen palauttamiseen.
+ */
 
 public class Laskutoimitus {
 
@@ -17,7 +20,10 @@ public class Laskutoimitus {
         this.tulos = 0;
     }
 
-
+/**
+ * Metodi käynnistää toisen metodin joka vastaa käyttäjän antamaa laskutoimistusoperaattoria.
+ * 
+ */
     public void laske() {
     
         if ("+".equals(this.operaattori)) {
@@ -40,22 +46,36 @@ public class Laskutoimitus {
         }
     }
     
+    
+ /**
+ * Metodi laskee summan ja asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */
     public void pluslasku() {
     
         this.tulos = this.luku1 + this.luku2;
     }
-            
+ /**
+ * Metodi laskee lukujen erotuksen ja asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */            
     public void miinuslasku() {
     
         this.tulos = this.luku1 - this.luku2;
              
     }
-
+ /**
+ * Metodi laskee lukujen tulon ja asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */
     public void kertolasku() {
     
         this.tulos = this.luku1 * this.luku2;   
     }
- 
+ /**
+ * Metodi laskee lukujen osamäärän ja asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */ 
     public void jakolasku() {
     
         if (this.luku2 != 0) {
@@ -64,6 +84,10 @@ public class Laskutoimitus {
             throw new IndexOutOfBoundsException("Nollalla ei voi jakaa.");
         }
     }
+ /**
+ * Metodi laskee ensimmäisen käyttäjän antaman luvun toisen luvun potenssiin asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */
     public void potenssi() {
         if (this.luku1 >= 0) { 
             this.tulos = Math.pow(this.luku1, this.luku2);
@@ -71,6 +95,10 @@ public class Laskutoimitus {
             this.tulos = -Math.pow(-this.luku1, this.luku2);
         }
     }
+ /**
+ * Metodi ottaa toisen luvun juuren ensimmäisestä luvusta ja asettaa sen laskutoimituksen tuloksen arvoksi.
+ * 
+ */
     public void juuri() {
 
         if (this.luku1 > 0) { 
@@ -80,7 +108,12 @@ public class Laskutoimitus {
         }
             
     }
-
+ /**
+ * Metodi palauttaa tuloksen laskutomituksen suorittamisen jälkeen.
+ * 
+ * 
+ * @return laskutoimituksen tulos
+ */
  
     public double annaTulos() {
   
