@@ -1,6 +1,7 @@
 
-package laskin.laskin;
+package laskin.logiikka;
 
+import laskin.logiikka.Vakiomuistio;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class VakiomuistioTest {
     @Before
     public void setUp() {
  
-    muistio = new Vakiomuistio("symboli", 4);    
+    muistio = new Vakiomuistio();    
     muistio.lisaaVakioMuistioon("uusi", 32.5);
     }
     
@@ -65,7 +66,7 @@ public class VakiomuistioTest {
     @Test
     public void toStringPalauttaaOikeassaMuodossa(){
         
-        Vakiomuistio muistio1 = new Vakiomuistio("a", 4); 
+        Vakiomuistio muistio1 = new Vakiomuistio(); 
         assertEquals(muistio1.toString(), "\na = 4.0\npii = 3.14159\nR = 8.31446\ne = 2.718281\n");
  
     }

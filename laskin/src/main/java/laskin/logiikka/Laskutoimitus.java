@@ -1,5 +1,5 @@
 
-package laskin.laskin;
+package laskin.logiikka;
 
 /**
  * Laskutoimitus luokka tarjoaa metodit laskutoimitusten suorittamista varten, sekä metodin tuloksen palauttamiseen.
@@ -11,6 +11,15 @@ public class Laskutoimitus {
     double luku2;
     String operaattori;
     double tulos;
+
+/**
+ * Konstruktori asettaa määritetyt luvut ja operaattorin luokan käyttöön.
+ * 
+ * @param luku1 käyttäjän antama luku
+ * @param luku2 käyttäjän antama luku
+ * @param operaattori käyttäjän valitsema operaattori.
+ * 
+ */
 
     public Laskutoimitus(double luku1, double luku2, String operaattori) {    
     

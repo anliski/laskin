@@ -1,5 +1,6 @@
 
-package laskin.laskin;
+package laskin.logiikka;
+import laskin.logiikka.Laskutoimitus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,8 @@
 
-package laskin.laskin;
+package laskin.logiikka;
 
 import java.util.HashMap;
+
 /**
  * Vakiomuistio luokka sisältää muistion johon voi tallentaa jo josta voi hakea vakioita.
  */
@@ -10,11 +11,12 @@ public final class Vakiomuistio {
    
     HashMap<String, Double> muistio = new HashMap<>();
    
+/**
+ * Konstruktori lisää vakiomuistioon valmiit symbolit ja niitä vastaavat arvot.
+ *  
+ */
+    public Vakiomuistio() {
 
-    public Vakiomuistio(String lisattava, double arvo) {
-    
-        lisaaVakioMuistioon(lisattava, arvo);
-   
         lisaaValmiitVakiot();
     
     

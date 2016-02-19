@@ -1,7 +1,7 @@
 package laskin.main;
 
 
-import laskin.laskin.Laskin;
+import laskin.ui.Laskin;
 
 /**
  * Main luo uuden laskimen ja avaa käyttöliittymän.

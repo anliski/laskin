@@ -2,8 +2,8 @@
 package laskin.ui;
 
 import java.util.Scanner;
-import laskin.laskin.Laskutoimitus;
-import laskin.laskin.Valinta;
+import laskin.logiikka.Laskutoimitus;
+import laskin.logiikka.Valinta;
 
 /**
  * TUI luokka sisältää tekstikäyttöliittymän.
@@ -29,9 +29,6 @@ public class TUI {
             System.out.println("valitse toiminto");
             toiminta = lukija.nextLine();
                     
-            if ("loppu".equals(toiminta)) {
-                System.out.println(valinta.loppu());
-            }
         
             if ("help".equals(toiminta)) {
                 System.out.println(valinta.help());

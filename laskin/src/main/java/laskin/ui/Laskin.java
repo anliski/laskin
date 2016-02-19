@@ -1,4 +1,4 @@
-package laskin.laskin;
+package laskin.ui;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import laskin.ui.*;
  * luokka luo laskimen graafiset osat ja uuden käyttöliittymän.
  */
 
-public class Laskin {
+public class Laskin{
     
     public JFrame reunat;
     public JPanel numeropaneli;
@@ -19,20 +19,23 @@ public class Laskin {
     public ArrayList<JButton> numeronapit = new ArrayList<>();
     public ArrayList<JButton> valikkonapit = new ArrayList<>();
     public ArrayList<JButton> operaattorinapit = new ArrayList<>();
-    public GUI graafinen;
-    //public TUI teksti;
+    public Toiminta toiminta;
+    public Komponentit komponentit;
+    
+/**
+ * Konstruktori luo uuden toiminnan.
+ */
     
     public Laskin() {
-        graafinen = new GUI();
-        //teksti = new TUI();
-    }    
+        toiminta = new Toiminta(); 
+        komponentit = new Komponentit();
+    } 
+    
+/**
+ * Metodi luo raamit laskimelle, asetta ne näkyväksi ja kutsuu muita luokan sisäisiä metodeja jotka lisäävät panelit.
+ */
+    
     public void kayta() {
-        
-        luoUusiLaskin();
-        graafinen.kaytto();
-        //teksti.kaytto();
-    }
-    public void luoUusiLaskin() {
         
         reunat = new JFrame("Laskin");
         reunat.setSize(700, 400);
@@ -43,148 +46,122 @@ public class Laskin {
         reunat.setVisible(true);
         
     }
-    
+/**
+ * Metodi asettaa raameihin uuden tekstikentän ja panelin
+ * 
+ * @param  symboli Käyttäjän antama symboli.
+ * 
+ * @return true jos symboli löytyy muistiosta/false jos symbolia ei löydy.
+ */
     public void luoTekstikentta() {
         
-        tekstikentta = new JTextField("", 12);
-        teksti = new JPanel(new GridBagLayout());
-        teksti.setBounds(5, 60 , 700 , 50);
+        tekstikentta = komponentit.luoTekstikentta();
+        teksti = komponentit.luoPaneli(5, 60, 700, 50);
         teksti.setBackground(Color.WHITE);
         GridBagConstraints c1 = new GridBagConstraints();
-        c1.gridx = 0;
-        c1.gridy = 0;
-        teksti.add(tekstikentta, c1);
+        teksti.add(tekstikentta, komponentit.asettele(c1, 0, 0));
         lisaaPaneliRaameihin(teksti);
     }
- 
+ /**
+ * Metodi asettaa raameihin valinkkopanelin ja lisää sille napit.
+ * 
+ */
         
     public void luoValikko() { 
-        valikko = new JPanel(new GridBagLayout());
-        valikko.setBounds(5, 5 , 700 , 50);
+        valikko = komponentit.luoPaneli(5, 5, 700, 50); 
         valikko.setBackground(Color.darkGray);
         GridBagConstraints c2 = new GridBagConstraints();
         teeValikkoNapit();
         
-        graafinen.lisaaActionListenerHelp(valikkonapit.get(0)); //help
-        graafinen.lisaaActionListenerVakio(valikkonapit.get(1)); //vakio
-        graafinen.lisaaActionListenerLasku(valikkonapit.get(2), tekstikentta); //lasku
-        graafinen.lisaaActionListenerListaa(valikkonapit.get(3)); //listaa
-        
-        c2.gridx = 40; 
-        c2.gridy = 50;
-        valikko.add(valikkonapit.get(0), c2);
-        c2.gridx = 50;
-        c2.gridy = 50;
-        valikko.add(valikkonapit.get(1), c2);
-        c2.gridx = 60;
-        c2.gridy = 50;
-        valikko.add(valikkonapit.get(2), c2);
-        c2.gridx = 70;
-        c2.gridy = 50;
-        valikko.add(valikkonapit.get(3), c2);
+        toiminta.lisaaActionListenerHelp(valikkonapit.get(0)); //help
+        toiminta.lisaaActionListenerVakio(valikkonapit.get(1), tekstikentta, operaattorinapit); //vakio
+        toiminta.lisaaActionListenerLasku(valikkonapit.get(2), tekstikentta); //lasku
+        toiminta.lisaaActionListenerListaa(valikkonapit.get(3)); //listaa
+
+        valikko.add(valikkonapit.get(0), komponentit.asettele(c2, 40, 50));
+        valikko.add(valikkonapit.get(1), komponentit.asettele(c2, 50, 50));
+        valikko.add(valikkonapit.get(2), komponentit.asettele(c2, 60, 50));
+        valikko.add(valikkonapit.get(3), komponentit.asettele(c2, 70, 50));
         
         lisaaPaneliRaameihin(valikko);
     }
-        
+/**
+ * Metodi tekee numeropanelin ja lisää siihen numeronapit ja operaattorinapit.
+ *
+ */    
+
     public void lisaaNumeroPaneli() {
         
         numeropaneli = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         
-        luoNumeronapit();
+        komponentit.luoNumeronapit(numeronapit, toiminta, tekstikentta);
         lisaaNumeroNappulat(c, numeropaneli);
         lisaaOperaattoriNappulat(c, numeropaneli);
     }
     
-    public void luoNumeronapit() {
-        for (int i = 0; i < 10; i++) {  
-            numeronapit.add(new JButton(Integer.toString(i)));
-            graafinen.lisaaActionListenerNumeronapeille(numeronapit.get(i), i, tekstikentta);
-        }
-    }
+/**
+ * Metodi lisää numeronapit paneliin.
+ * 
+ */       
     
     public void lisaaNumeroNappulat(GridBagConstraints c, JPanel numeropaneli) {       
-        c.gridx = 0;
-        c.gridy = 1;
-        numeropaneli.add(numeronapit.get(1), c);
-        c.gridx = 1;
-        c.gridy = 1;
-        numeropaneli.add(numeronapit.get(2), c);
-        c.gridx = 2;
-        c.gridy = 1;
-        numeropaneli.add(numeronapit.get(3), c);        
-        c.gridx = 0;
-        c.gridy = 2;
-        numeropaneli.add(numeronapit.get(4), c);
-        c.gridx = 1;
-        c.gridy = 2;
-        numeropaneli.add(numeronapit.get(5), c);
-        c.gridx = 2;
-        c.gridy = 2;
-        numeropaneli.add(numeronapit.get(6), c);
-        c.gridx = 0;
-        c.gridy = 3;
-        numeropaneli.add(numeronapit.get(7), c);
-        c.gridx = 1;
-        c.gridy = 3;
-        numeropaneli.add(numeronapit.get(8), c);
-        c.gridx = 2;
-        c.gridy = 3;
-        numeropaneli.add(numeronapit.get(9), c);
-        c.gridx = 1;
-        c.gridy = 4;
-        numeropaneli.add(numeronapit.get(0), c);
+
+        numeropaneli.add(numeronapit.get(1), komponentit.asettele(c, 0, 1));
+        numeropaneli.add(numeronapit.get(2), komponentit.asettele(c, 1, 1));
+        numeropaneli.add(numeronapit.get(3), komponentit.asettele(c, 2, 1));        
+        numeropaneli.add(numeronapit.get(4), komponentit.asettele(c, 0, 2));
+        numeropaneli.add(numeronapit.get(5), komponentit.asettele(c, 1, 2));
+        numeropaneli.add(numeronapit.get(6), komponentit.asettele(c, 2, 2));
+        numeropaneli.add(numeronapit.get(7), komponentit.asettele(c, 0, 3));
+        numeropaneli.add(numeronapit.get(8), komponentit.asettele(c, 1, 3));
+        numeropaneli.add(numeronapit.get(9), komponentit.asettele(c, 2, 3));
+        numeropaneli.add(numeronapit.get(0), komponentit.asettele(c, 1, 4));
     }
-    public void teeOperaattoriNappulat() {
-        operaattorinapit.add(new JButton("="));
-        operaattorinapit.add(new JButton("C"));
-        operaattorinapit.add(new JButton("+"));
-        operaattorinapit.add(new JButton("-"));
-        operaattorinapit.add(new JButton("/"));
-        operaattorinapit.add(new JButton("*"));
-        operaattorinapit.add(new JButton("^"));
-        operaattorinapit.add(new JButton("r"));
-        operaattorinapit.add(new JButton(","));
-        operaattoriNappulatLisaaToiminta();
-        
-    }
-   
-    public void operaattoriNappulatLisaaToiminta() {
-        graafinen.lisaaActionListenerOperaattorinapeille(operaattorinapit, tekstikentta);
-    }
+ /**
+ * Metodi tekee operaattoreille napit.
+ * 
+ */    
     
+    public void teeOperaattoriNappulat() {
+        String jarjestys = "=C+-/*^r,M";
+        for (int i = 0; i <= 9 ; i++){
+            operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));
+        }
+        operaattoriNappulatLisaaToiminta();   
+    }
+ /**
+ * Metodi lisää toiminnallisuuden operaattorinappeihin.
+ */    
+
+    public void operaattoriNappulatLisaaToiminta() {
+        toiminta.lisaaActionListenerOperaattorinapeille(operaattorinapit, tekstikentta);
+    }
+ /**
+ * Metodi asettelee operaattorinapit parametrina saatuun paneliin.
+ * @param c koordinaatisto 
+ * @param numeropaneli paneli johon operaattorinapit lisätään.
+ */        
+ 
     public void lisaaOperaattoriNappulat(GridBagConstraints c, JPanel numeropaneli) {
+        
         teeOperaattoriNappulat(); 
-        c.gridx = 0;
-        c.gridy = 4;
-        numeropaneli.add(operaattorinapit.get(1), c);
-        c.gridx = 2;
-        c.gridy = 4;
-        numeropaneli.add(operaattorinapit.get(0), c);
-        c.gridx = 4;
-        c.gridy = 1;
-        numeropaneli.add(operaattorinapit.get(2), c);
-        c.gridx = 5;
-        c.gridy = 1;
-        numeropaneli.add(operaattorinapit.get(3), c);
-        c.gridx = 4;
-        c.gridy = 2;
-        numeropaneli.add(operaattorinapit.get(4), c);
-        c.gridx = 5;
-        c.gridy = 2;
-        numeropaneli.add(operaattorinapit.get(5), c);
-        c.gridx = 4;
-        c.gridy = 3;
-        numeropaneli.add(operaattorinapit.get(6), c);
-        c.gridx = 5;
-        c.gridy = 3;
-        numeropaneli.add(operaattorinapit.get(7), c);  
-        c.gridx = 4;
-        c.gridy = 4;
-        numeropaneli.add(operaattorinapit.get(8), c);
+        numeropaneli.add(operaattorinapit.get(1), komponentit.asettele(c, 0, 4));
+        numeropaneli.add(operaattorinapit.get(0), komponentit.asettele(c, 2, 4));
+        numeropaneli.add(operaattorinapit.get(2), komponentit.asettele(c, 4, 1));
+        numeropaneli.add(operaattorinapit.get(3), komponentit.asettele(c, 5, 1));
+        numeropaneli.add(operaattorinapit.get(4), komponentit.asettele(c, 4, 2));
+        numeropaneli.add(operaattorinapit.get(5), komponentit.asettele(c, 5, 2));
+        numeropaneli.add(operaattorinapit.get(6), komponentit.asettele(c, 4, 3));
+        numeropaneli.add(operaattorinapit.get(7), komponentit.asettele(c, 5, 3));  
+        numeropaneli.add(operaattorinapit.get(8), komponentit.asettele(c, 4, 4));
+        numeropaneli.add(operaattorinapit.get(9), komponentit.asettele(c, 5, 4));
         lisaaPaneliRaameihin(numeropaneli);
     }
-    
+ /**
+ * Metodi tekee valikkonapit.
+ * 
+ */    
     public void teeValikkoNapit() {
  
         valikkonapit.add(new JButton("help"));
@@ -192,7 +169,10 @@ public class Laskin {
         valikkonapit.add(new JButton("lasku"));
         valikkonapit.add(new JButton("listaa"));
     }
-        
+/**
+ * Metodi lisää parametrina annetun panelin raameihin.
+ */       
+     
     public void lisaaPaneliRaameihin(JPanel paneli) {
         reunat.add(paneli);
     }
