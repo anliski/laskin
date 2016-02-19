@@ -17,3 +17,9 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). Vakioihin viita
 
 ![Alt text](https://github.com/anliski/laskin/blob/master/dokumentointi/luokkakaavio.png)
 
+**Sekvenssikaaviot:** 
+
+![Alt text](https://github.com/anliski/laskin/blob/master/dokumentointi/laskutoimitus.png)
+
+![Alt text](https://github.com/anliski/laskin/blob/master/dokumentointi/vakiomuistio.png)
+
