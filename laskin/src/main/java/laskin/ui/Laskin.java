@@ -9,7 +9,7 @@ import laskin.ui.*;
  * luokka luo laskimen graafiset osat ja uuden käyttöliittymän.
  */
 
-public class Laskin{
+public class Laskin {
     
     public JFrame reunat;
     public JPanel numeropaneli;
@@ -47,11 +47,8 @@ public class Laskin{
         
     }
 /**
- * Metodi asettaa raameihin uuden tekstikentän ja panelin
- * 
- * @param  symboli Käyttäjän antama symboli.
- * 
- * @return true jos symboli löytyy muistiosta/false jos symbolia ei löydy.
+ * Metodi asettaa raameihin uuden tekstikentän ja panelin.
+ *
  */
     public void luoTekstikentta() {
         
@@ -102,6 +99,8 @@ public class Laskin{
     
 /**
  * Metodi lisää numeronapit paneliin.
+ * @param c koordinaatiosto
+ * @param numeropaneli paneli johoon tulee numeronapit.
  * 
  */       
     
@@ -125,7 +124,7 @@ public class Laskin{
     
     public void teeOperaattoriNappulat() {
         String jarjestys = "=C+-/*^r,M";
-        for (int i = 0; i <= 9 ; i++){
+        for (int i = 0; i <= 9; i++) {
             operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));
         }
         operaattoriNappulatLisaaToiminta();   
@@ -171,6 +170,7 @@ public class Laskin{
     }
 /**
  * Metodi lisää parametrina annetun panelin raameihin.
+ *@param paneli raameihin lisättävä paneli.
  */       
      
     public void lisaaPaneliRaameihin(JPanel paneli) {

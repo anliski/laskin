@@ -30,6 +30,7 @@ public final class Vakiomuistio {
         muistio.put("pii", 3.14159);
         muistio.put("R", 8.31446);
         muistio.put("e", 2.718281);
+       
 
     }
 /**

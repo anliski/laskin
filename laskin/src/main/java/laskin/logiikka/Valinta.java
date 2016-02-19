@@ -10,7 +10,9 @@ package laskin.logiikka;
 public class Valinta {
 
     Vakiomuistio muistio = new Vakiomuistio();
-    
+/**
+ * Konstruktori.
+ */    
     public Valinta() {    
     }
 
@@ -24,7 +26,6 @@ public class Valinta {
     }        
 /**
  * Metodi tutkii löytyykö vakiota muistiosta.
- * HUOM: Käyttää vakiomuistion metodia.
  * 
  * @param  symboli Käyttäjän antama symboli.
  * 
@@ -36,8 +37,7 @@ public class Valinta {
         
     }
 /**
- * Metodi etsii symbolia vastaavan vakion arvon ja palauttaa sen .
- * HUOM: Käyttää vakiomuistion metodia.
+ * Metodi etsii symbolia vastaavan vakion arvon ja palauttaa sen.
  * 
  * @param  symboli Käyttäjän antama symboli.
  * 
@@ -50,7 +50,6 @@ public class Valinta {
     }
 /**
  * Metodi lisää vakiomuistioon symbolin ja sitävastaavan numeroarvon.
- * HUOM: Käyttää vakiomuistion metodia.
  * 
  * @param  symboli Käyttäjän antama symboli.
  * @param  arvo Käyttäjän antama arvo symbolille.
@@ -121,11 +120,8 @@ public class Valinta {
     }
  /**
  * Listaa kaikki muistiossa olevat symbolit ja niitä vastaavat luvut.
- * HUOM! Käyttyyä Vakiomuistion metodia
  * 
- * @param  merkki käyttäjän operaattori. 
- *
- * @return true jos merkki vastaa jotakin valinnoista, muuten false.
+ * @return muistio
  */     
     
     public String listaaKaikki() {

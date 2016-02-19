@@ -69,7 +69,7 @@ public class ValintaTest {
     public void tutkiOnkoVakioMuistiossaPalauttaaOikein(){
         assertTrue(valinta.tutkiOnkoVakioMuistissa("R"));
         assertFalse(valinta.tutkiOnkoVakioMuistissa("???"));
-        assertTrue(valinta.tutkiOnkoVakioMuistissa("atm"));
+        assertTrue(valinta.tutkiOnkoVakioMuistissa("pii"));
         
  
     }   
@@ -111,7 +111,7 @@ public class ValintaTest {
     @Test
     public void maarittaLukuMaarittaaOikein(){
         assertEquals(valinta.maaritaLuku("9.886"), 9.886, 0.00001);
-        assertEquals(valinta.maaritaLuku("atm"), 101325, 0.00001);
+      
 
         valinta.lisaaVakioMuistioon("uusi", 5.7); 
 
@@ -122,7 +122,7 @@ public class ValintaTest {
 //9.    
     @Test
     public void listaaKaikkiListaaOikein(){
-        assertEquals(valinta.listaaKaikki(),"\npii = 3.14159\nR = 8.31446\ne = 2.718281\natm = 101325.0\n");
+        assertEquals(valinta.listaaKaikki(),"\npii = 3.14159\nR = 8.31446\ne = 2.718281\n");
 
     }
     
