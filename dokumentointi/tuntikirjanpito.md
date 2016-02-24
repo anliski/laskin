@@ -16,3 +16,6 @@
 |9.2.2016|  6.25h  | Nappuloiden, panelien, tekstikentän tekemisen opettelu.|
 |11.2.2016|  7.5h  | Nappuloiden, panelien ja tekstikentän järjestely. Toiminnallisuuden lisäämisen harjoittelu.|
 |12.2.2016|  6h  | Laskin luokka loppuun, JavaDocin aloittaminen, checkstyle ja pit raportti, luokkakaavion päivitys|
+|17.2.2016|  5.25h  | Toiminta luokassa, vakio ja laskujen toiminnallisuuksien ongelmien ratkaisua|
+|18.2.2016|  2.5h  | javadoc jatkamista, checkstyle.xml muokkaus|
+|19.2.2016|  10.5h  | Koodikatselmointi, javadoc, sekvenssikaavioiden piirtäminen, checkstyle virheiden korjaaminen, testien muokkaaminen, aihemäärittelyn päivittäminen, luokkakaavion piirtäminen, uusi luokka Komponentit|
