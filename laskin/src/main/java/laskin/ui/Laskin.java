@@ -105,7 +105,7 @@ public class Laskin {
  */       
     
     public void lisaaNumeroNappulat(GridBagConstraints c, JPanel numeropaneli) {       
-
+        
         numeropaneli.add(numeronapit.get(1), komponentit.asettele(c, 0, 1));
         numeropaneli.add(numeronapit.get(2), komponentit.asettele(c, 1, 1));
         numeropaneli.add(numeronapit.get(3), komponentit.asettele(c, 2, 1));        
@@ -123,18 +123,15 @@ public class Laskin {
  */    
     
     public void teeOperaattoriNappulat() {
-        String jarjestys = "=C+-/*^r,M";
-        for (int i = 0; i <= 9; i++) {
-            operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));
-        }
-        operaattoriNappulatLisaaToiminta();   
+        komponentit.luoOperaattoriNappulat(operaattorinapit);
+        operaattorinapitLisaaToiminta();   
     }
  /**
  * Metodi lisää toiminnallisuuden operaattorinappeihin.
  */    
 
-    public void operaattoriNappulatLisaaToiminta() {
-        toiminta.lisaaActionListenerOperaattorinapeille(operaattorinapit, tekstikentta);
+    public void operaattorinapitLisaaToiminta() {
+        toiminta.lisaaActionListenerOperaattoritoiminta(operaattorinapit, tekstikentta);
     }
  /**
  * Metodi asettelee operaattorinapit parametrina saatuun paneliin.

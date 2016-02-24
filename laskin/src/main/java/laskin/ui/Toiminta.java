@@ -35,13 +35,25 @@ public class Toiminta {
     public Toiminta() {
     }
 /**
- * Metodi lisää kullekkin operaattori napille sen toiminnon.
+ * Metodi lisää kullekkin operaattorinapille sen toiminnon.
  * @param operaattorit lista operaattorinapeista.
  * @param tekstikentta 
  */ 
+    public void lisaaActionListenerOperaattoritoiminta(ArrayList<JButton> operaattorinapit, JTextField tekstikentta){
+        lisaaActionListenerTulos(operaattorinapit.get(0), tekstikentta);
+        lisaaActionListenerTyhjennys(operaattorinapit.get(1), tekstikentta);
+        lisaaActionListenerlaskutoimitusnapeille(operaattorinapit, tekstikentta);
+        lisaaActionListenerPilkulle(operaattorinapit.get(8), tekstikentta);
+        lisaaActionListenerMuista(operaattorinapit.get(9), tekstikentta);
+    }
+/**
+ * Metodi lisää tulos operaattorinapille sen toiminnon.
+ * @param tulos nappi
+ * @param tekstikentta 
+ */    
     
-    public void lisaaActionListenerOperaattorinapeille(ArrayList<JButton> operaattorit, JTextField tekstikentta) {
-        operaattorit.get(0).addActionListener(new ActionListener() {
+    public void lisaaActionListenerTulos(JButton tulos, JTextField tekstikentta) {
+        tulos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
                 if (tila == 0) {
@@ -58,29 +70,55 @@ public class Toiminta {
                         symboli = tekstikentta.getText();
                         tekstikentta.setText("");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Valitsemasi symboli on jo muistiossa ta se oli numero");
+                        JOptionPane.showMessageDialog(null, "Valitsemasi symboli on jo muistiossa tai se oli numero");
                     }
                 }  
             }
         });
-        operaattorit.get(1).addActionListener(new ActionListener() {
+    }
+ /**
+ * Metodi lisää tyhjennysnapille sen toiminnon.
+ * @param tyhjennys
+ * @param tekstikentta 
+ */ 
+    public void lisaaActionListenerTyhjennys(JButton tyhjennys, JTextField tekstikentta) {
+        tyhjennys.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
                 tekstikentta.setText("");
             }
         });
+    }
+    /**
+ * Metodi lisää kullekkin laskutoimitusnapille sen toiminnon.
+ * @param operaattorit lista operaattorinapeista.
+ * @param tekstikentta 
+ */ 
+    public void lisaaActionListenerlaskutoimitusnapeille(ArrayList<JButton> operaattorit, JTextField tekstikentta) {    
         for (int i = 2; i <= 7; i++) {
             actionOperaattorit(tekstikentta, operaattorit.get(i)); 
         }
-        operaattorit.get(8).addActionListener(new ActionListener() {
+    }
+    public void lisaaActionListenerPilkulle(JButton pilkku, JTextField tekstikentta) {
+        pilkku.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
+                
+                int pituus = tekstikentta.getText().length();
+                if (tekstikentta.getText().contains(",") == false){
                 teksti = tekstikentta.getText() + ",";
-                tekstikentta.setText(teksti);
-//tässä pitää tarkistaa että käyttäjä ei laita kahta pilkkua.
+                tekstikentta.setText(teksti); 
+                }
             }
         });  
-        operaattorit.get(9).addActionListener(new ActionListener() {
+    }    
+/**
+ *Metodi lisää muistinapille sen toiminnon.
+ * @param muista
+ * @param tekstikentta 
+ */ 
+    public void lisaaActionListenerMuista(JButton muista, JTextField tekstikentta) {    
+        muista.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
                 if (tila == 1) {
@@ -158,6 +196,7 @@ public class Toiminta {
         lasku.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
+                tekstikentta.setText("");
                 tila = 0;
             }
         });
@@ -174,8 +213,8 @@ public class Toiminta {
         vakio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
-                tila = 1; 
                 tekstikentta.setText("");  
+                tila = 1;
             }
         });
     }

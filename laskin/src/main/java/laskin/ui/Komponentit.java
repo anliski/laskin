@@ -26,7 +26,7 @@ public class Komponentit {
  * @return tekstikenttä
  */
     public JTextField luoTekstikentta() {
-        JTextField tekstikentta = new JTextField("", 12);
+        JTextField tekstikentta = new JTextField("", 17);
         return tekstikentta;
     }
 
@@ -76,4 +76,13 @@ public class Komponentit {
             toiminta.lisaaActionListenerNumeronapeille(numeronapit.get(i), i, tekstikentta);
         }
     }
+    public void luoOperaattoriNappulat(ArrayList<JButton> operaattorinapit){
+        String jarjestys = "=C+-/*^r,M";
+        for (int i = 0; i <= 9; i++) {
+            operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));
+        }
+        
+    }
+
+
 }
