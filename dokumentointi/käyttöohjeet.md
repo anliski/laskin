@@ -31,3 +31,6 @@ Laskimella voi laskea plus, miinus, kerto, jako, potenssi ja juuri-laskuja, pain
   * ensimmäisistä luvutsa otetaan toisen luvun juuri.
   * Jos käyttäjä yrittää ottaa negatiivistesta arvosta juurta, ohjelma ei laske tulosta.
 
+**Muuta huomioitavaa**
+ - "C" -nappi tyhjenttä tekstikentän
+ - pilkkua ei voi laittaa kahta kertaa.
