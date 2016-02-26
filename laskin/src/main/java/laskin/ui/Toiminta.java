@@ -86,8 +86,8 @@ public class Toiminta {
         pilkku.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) { 
-                if (tekstikentta.getText().contains(",") == false) {
-                    teksti = tekstikentta.getText() + ",";
+                if (tekstikentta.getText().contains(".") == false) {
+                    teksti = tekstikentta.getText() + ".";
                     tekstikentta.setText(teksti); 
                 }
             }

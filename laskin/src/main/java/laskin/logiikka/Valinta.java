@@ -29,6 +29,8 @@ public class Valinta {
  * 
  * @param  symboli Käyttäjän antama symboli.
  * 
+ * @see laskin.logiikka.Vakiomuistio#tutkiOnkoVakioMuistissa(String) 
+ * 
  * @return true jos symboli löytyy muistiosta/false jos symbolia ei löydy.
  */
     
@@ -40,6 +42,8 @@ public class Valinta {
  * Metodi etsii symbolia vastaavan vakion arvon ja palauttaa sen.
  * 
  * @param  symboli Käyttäjän antama symboli.
+ * 
+ * @see laskin.logiikka.Vakiomuistio#palautaVakionArvo(String) 
  * 
  * @return vakion numeroarvo.
  */    
@@ -54,6 +58,7 @@ public class Valinta {
  * @param  symboli Käyttäjän antama symboli.
  * @param  arvo Käyttäjän antama arvo symbolille.
  * 
+ * @see laskin.logiikka.Vakiomuistio#lisaaVakioMuistioon(String, double)  
  */    
     
     public void lisaaVakioMuistioon(String symboli, double arvo) {
@@ -65,7 +70,7 @@ public class Valinta {
  * Metodi tutkii onko parametrina annettu kirjainjono muunnettavissa luvuksi.
  *
  * @param  luku käyttäjän antama kirjainjono. 
- *
+ * 
  * @return true jos kirjainjono on luku tai sitä vastaava luku löytyy vakiomuistiosta. Muuten false.
  */  
     
@@ -77,7 +82,7 @@ public class Valinta {
  * Metodi muuntaa annetun kirjainjonon numeroksi.
  * 
  * @param  luku käyttäjän antama kirjainjono. 
- *
+ * 
  * @return kirjainjonoa vastaava luku.
  */    
 
@@ -120,6 +125,8 @@ public class Valinta {
     }
  /**
  * Listaa kaikki muistiossa olevat symbolit ja niitä vastaavat luvut.
+ * 
+ * @see laskin.logiikka.Vakiomuistio#toString()
  * 
  * @return muistio
  */     
