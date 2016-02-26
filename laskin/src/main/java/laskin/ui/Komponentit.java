@@ -83,7 +83,7 @@ public class Komponentit {
      */  
     
     public void luoOperaattoriNappulat(ArrayList<JButton> operaattorinapit) {
-        String jarjestys = "=C+-/*^r,M";
+        String jarjestys = "=C+-/*^r.M";
         for (int i = 0; i <= 9; i++) {
             operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));
         }

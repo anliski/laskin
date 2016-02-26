@@ -79,11 +79,11 @@ public class Toiminta {
         }
     }
  /** Metodi lisää kullekkin pilkkunapille sen toiminnon.
- * @param pilkku nappi.
+ * @param piste nappi.
  * @param tekstikentta 
  */ 
-    public void lisaaActionListenerPilkulle(JButton pilkku, JTextField tekstikentta) {
-        pilkku.addActionListener(new ActionListener() {
+    public void lisaaActionListenerPilkulle(JButton piste, JTextField tekstikentta) {
+        piste.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) { 
                 if (tekstikentta.getText().contains(".") == false) {
