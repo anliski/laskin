@@ -154,17 +154,12 @@ public class LaskutoimitusTest {
     
 //10.    
     @Test
-    public void negatiivisestaArvostaJuurenOttaminenAiheuttaaExceptionin(){
-        boolean thrown = false;
-        laskutoimitus1 = new Laskutoimitus(-8, 2 , "r");
-   
-        try{
-        laskutoimitus1.laske();
-        }
-        catch(IndexOutOfBoundsException e){
-        thrown = true;}
+    public void negatiivisestaArvostaJuurenOttaminenEiTeeMitaan(){
         
-        assertTrue(thrown);
+        laskutoimitus1 = new Laskutoimitus(-8, 2 , "r");
+
+        laskutoimitus1.laske();
+        assertEquals( 0 , laskutoimitus1.tulos, 0.0001);
  
     }
         
