@@ -76,7 +76,13 @@ public class Komponentit {
             toiminta.lisaaActionListenerNumeronapeille(numeronapit.get(i), i, tekstikentta);
         }
     }
-    public void luoOperaattoriNappulat(ArrayList<JButton> operaattorinapit){
+     /**
+     * Metodi luo operaattorinapit ja lisää ne listaan.
+     * @param operaattorinapit lista johon luodut napit lisätään.
+     * 
+     */  
+    
+    public void luoOperaattoriNappulat(ArrayList<JButton> operaattorinapit) {
         String jarjestys = "=C+-/*^r,M";
         for (int i = 0; i <= 9; i++) {
             operaattorinapit.add(new JButton(Character.toString(jarjestys.charAt(i))));

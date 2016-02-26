@@ -1,4 +1,3 @@
-
 package laskin.ui;
 
 import java.awt.Color;
@@ -11,14 +10,10 @@ import laskin.logiikka.Laskutoimitus;
 import laskin.logiikka.Valinta;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-
 /**
  * Luokka sisältää nappien toiminnallisudet.
  */
-
 public class Toiminta {
-    
-
     public Valinta valinta = new Valinta();
     public String teksti;
     public int tila;
@@ -27,7 +22,6 @@ public class Toiminta {
     public String luku1;
     public String operaattori;
     public String luku2;       
-    public Laskutoimitus lasku;
     public ActionListener toiminta;
 /**
  * Konstruktori.
@@ -35,23 +29,10 @@ public class Toiminta {
     public Toiminta() {
     }
 /**
- * Metodi lisää kullekkin operaattorinapille sen toiminnon.
- * @param operaattorit lista operaattorinapeista.
- * @param tekstikentta 
- */ 
-    public void lisaaActionListenerOperaattoritoiminta(ArrayList<JButton> operaattorinapit, JTextField tekstikentta){
-        lisaaActionListenerTulos(operaattorinapit.get(0), tekstikentta);
-        lisaaActionListenerTyhjennys(operaattorinapit.get(1), tekstikentta);
-        lisaaActionListenerlaskutoimitusnapeille(operaattorinapit, tekstikentta);
-        lisaaActionListenerPilkulle(operaattorinapit.get(8), tekstikentta);
-        lisaaActionListenerMuista(operaattorinapit.get(9), tekstikentta);
-    }
-/**
  * Metodi lisää tulos operaattorinapille sen toiminnon.
  * @param tulos nappi
  * @param tekstikentta 
  */    
-    
     public void lisaaActionListenerTulos(JButton tulos, JTextField tekstikentta) {
         tulos.addActionListener(new ActionListener() {
             @Override
@@ -59,13 +40,12 @@ public class Toiminta {
                 if (tila == 0) {
                     luku2 = tekstikentta.getText();
                     if ((valinta.voikoLuvunMaarittaa(luku2) == true)) {
-                        lasku = new Laskutoimitus(valinta.maaritaLuku(luku1), valinta.maaritaLuku(luku2), operaattori);
+                        Laskutoimitus lasku = new Laskutoimitus(valinta.maaritaLuku(luku1), valinta.maaritaLuku(luku2), operaattori);
                         lasku.laske();
                         tekstikentta.setText(Double.toString(lasku.annaTulos()));
                     }
                 }
-                if (tila == 1) {
-                    
+                if (tila == 1) {                
                     if (valinta.tutkiOnkoVakioMuistissa(tekstikentta.getText()) == false & valinta.onkoNumero(tekstikentta.getText()) == false) {
                         symboli = tekstikentta.getText();
                         tekstikentta.setText("");
@@ -78,7 +58,7 @@ public class Toiminta {
     }
  /**
  * Metodi lisää tyhjennysnapille sen toiminnon.
- * @param tyhjennys
+ * @param tyhjennys nappi
  * @param tekstikentta 
  */ 
     public void lisaaActionListenerTyhjennys(JButton tyhjennys, JTextField tekstikentta) {
@@ -89,8 +69,7 @@ public class Toiminta {
             }
         });
     }
-    /**
- * Metodi lisää kullekkin laskutoimitusnapille sen toiminnon.
+ /** Metodi lisää kullekkin laskutoimitusnapille sen toiminnon.
  * @param operaattorit lista operaattorinapeista.
  * @param tekstikentta 
  */ 
@@ -99,22 +78,23 @@ public class Toiminta {
             actionOperaattorit(tekstikentta, operaattorit.get(i)); 
         }
     }
+ /** Metodi lisää kullekkin pilkkunapille sen toiminnon.
+ * @param pilkku nappi.
+ * @param tekstikentta 
+ */ 
     public void lisaaActionListenerPilkulle(JButton pilkku, JTextField tekstikentta) {
         pilkku.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent a) {
-                
-                int pituus = tekstikentta.getText().length();
-                if (tekstikentta.getText().contains(",") == false){
-                teksti = tekstikentta.getText() + ",";
-                tekstikentta.setText(teksti); 
+            public void actionPerformed(ActionEvent a) { 
+                if (tekstikentta.getText().contains(",") == false) {
+                    teksti = tekstikentta.getText() + ",";
+                    tekstikentta.setText(teksti); 
                 }
             }
         });  
     }    
-/**
- *Metodi lisää muistinapille sen toiminnon.
- * @param muista
+/**Metodi lisää muistinapille sen toiminnon.
+ * @param muista nappi
  * @param tekstikentta 
  */ 
     public void lisaaActionListenerMuista(JButton muista, JTextField tekstikentta) {    
@@ -134,14 +114,10 @@ public class Toiminta {
             }
         });         
     }
-    
- /**
- * Metodi lisää määrittelee toiminta actionListenerin napille.
- * 
+/** Metodi lisää määrittelee toiminta actionListenerin napille.
  * @param tekstikentta tekstikenttä
  * @param nappi 
  */ 
-    
     public void actionOperaattorit(JTextField tekstikentta, JButton nappi) {
         toiminta = new ActionListener() {
             @Override
@@ -157,13 +133,10 @@ public class Toiminta {
         };
         nappi.addActionListener(toiminta);    
     }
- /**
- * Metodi lisää help-valikkonapille sen toiminnan.
- * 
+ /** Metodi lisää help-valikkonapille sen toiminnan. 
  * @param help help-nappi
  */     
-    public void lisaaActionListenerHelp(JButton help) {
-            
+    public void lisaaActionListenerHelp(JButton help) {    
         help.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -171,13 +144,10 @@ public class Toiminta {
             }
         });
     }
-  /**
- * Metodi lisää listaa-valikkonapille sen toiminnan.
- * 
+ /** Metodi lisää listaa-valikkonapille sen toiminnan.
  * @param listaa listaa-nappi
  */   
-    public void lisaaActionListenerListaa(JButton listaa) {
-            
+    public void lisaaActionListenerListaa(JButton listaa) {    
         listaa.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -185,14 +155,11 @@ public class Toiminta {
             }
         });
     }
-  /**
- * Metodi lisää lasku-valikkonapille sen toiminnan.
- * 
+ /** Metodi lisää lasku-valikkonapille sen toiminnan.
  * @param lasku lasku-nappi
  * @param tekstikentta tekstikenttä
  */      
-    public void lisaaActionListenerLasku(JButton lasku, JTextField tekstikentta) {
-            
+    public void lisaaActionListenerLasku(JButton lasku, JTextField tekstikentta) {   
         lasku.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent a) {
@@ -201,15 +168,12 @@ public class Toiminta {
             }
         });
     }    
- /**
- * Metodi lisää vakio-valikkonapille sen toiminnan.
- * 
+ /** Metodi lisää vakio-valikkonapille sen toiminnan.
  * @param vakio vakio-nappi
  * @param tekstikentta tekstikenttä
  * @param operaattorit lista operaattoirnapeista
  */    
     public void lisaaActionListenerVakio(JButton vakio, JTextField tekstikentta, ArrayList<JButton> operaattorit) {
-        
         vakio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent event) {
@@ -218,14 +182,11 @@ public class Toiminta {
             }
         });
     }
-/**
- * Metodi lisää numeronapeille niiden toiminnan.
- * 
+/**Metodi lisää numeronapeille niiden toiminnan.
  * @param nappi numeronappi
  * @param i napin numero
  * @param tekstikentta tekstikenttä johon asetetaan teksti kun nappia painetaan
  */     
-    
     public void lisaaActionListenerNumeronapeille(JButton nappi, int i, JTextField tekstikentta) {
         nappi.addActionListener(new ActionListener() {
             @Override

@@ -131,7 +131,13 @@ public class Laskin {
  */    
 
     public void operaattorinapitLisaaToiminta() {
-        toiminta.lisaaActionListenerOperaattoritoiminta(operaattorinapit, tekstikentta);
+        
+        toiminta.lisaaActionListenerTulos(operaattorinapit.get(0), tekstikentta);
+        toiminta.lisaaActionListenerTyhjennys(operaattorinapit.get(1), tekstikentta);
+        toiminta.lisaaActionListenerlaskutoimitusnapeille(operaattorinapit, tekstikentta);
+        toiminta.lisaaActionListenerPilkulle(operaattorinapit.get(8), tekstikentta);
+        toiminta.lisaaActionListenerMuista(operaattorinapit.get(9), tekstikentta);
+    
     }
  /**
  * Metodi asettelee operaattorinapit parametrina saatuun paneliin.
