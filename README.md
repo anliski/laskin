@@ -2,6 +2,8 @@
 
 **Dokumentaatio**
 
+Huom! Ohjelma toimii laitoksen koneilla vain Netbeans+TMC:llä (ei siis netbeanssilla ilman TMC:tä...)
+
 [Laskee yksinkertaisia laskutoimituksia ja muistaa yleiset vakiot. Vakioita voi myös lisätä muistiin.](https://github.com/anliski/laskin/blob/master/dokumentointi/aiheenKuvausJaRakenne.md)
 
 
