@@ -1,5 +1,7 @@
 **Käyttöohjeet**
 
+Laskimella voi kirjoittaa vakioita muistiin, laskea peruslaskutoimituksia joko numeroilla tai muistissa olevilla vakioilla. Lisäksi voi tarkastella mitä vakioita muistio sisältää.  
+
 Kun ohjelma käynnistetään ilmastyy näytölle laskin, jossa ylimpänä tummanharmaalla pohjalla on neljä valikkonappia, keskellä valkoisella pohjalla on tekstikenttä ja alimpana on numeronappulat, opertaattorinappulat sekä muut toiminta nappulat.
 
 **Valikkonapit**
