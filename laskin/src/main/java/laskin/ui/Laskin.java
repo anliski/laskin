@@ -39,6 +39,7 @@ public class Laskin {
         
         reunat = new JFrame("Laskin");
         reunat.setSize(700, 400);
+        reunat.setLocationRelativeTo(null);
         reunat.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoTekstikentta();
         luoValikko();
