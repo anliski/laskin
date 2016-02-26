@@ -1,6 +1,6 @@
 ** Käyttöohjeet **
 
-Kun ohjelma käynnistetään pongahtaa näytölle laskin, jossa ylimpänä tummanharmaalla pohjalla on neljä valikkonappia, keskellä valkoisella pohjalla on tekstikenttä ja alimpana on numeronappulat, opertaattorinappulat sekä muut toiminta nappulat.
+Kun ohjelma käynnistetään ilmastyy näytölle laskin, jossa ylimpänä tummanharmaalla pohjalla on neljä valikkonappia, keskellä valkoisella pohjalla on tekstikenttä ja alimpana on numeronappulat, opertaattorinappulat sekä muut toiminta nappulat.
 
 **Valikkonapit**
 
@@ -17,3 +17,17 @@ Kun ohjelma käynnistetään pongahtaa näytölle laskin, jossa ylimpänä tumma
   * "listaa" -napista pongahtaa näytölle lista kaikista vakiomuistiossa olevsita vakioista ja niiden arvoista muodossa (pii = 3.41)
 
 **Laskutoimitukset**
+
+Laskimella voi laskea plus, miinus, kerto, jako, potenssi ja juuri-laskuja, painamalla ensin valikkonapeista "lasku"-kohdasta.
+
+- pluslaskuihin valitaan operaattorinapiksi "+"
+- miinuslaskuihin valitaan operaattorinapiksi "-"
+- kertolaskuihin valitaan operaattorinapiksi "*"
+- jakolaskuihin valitaan operaattorinapiksi "/"
+  * Mikäli käyttäjä yrittää jakaa nollalla ohjelma ei laske tulosta.
+- potenssilaskuihin valitaan operaattorinapiksi "^"
+  * ensimmäinen luku on tällöin kantaluku ja toinen eksponentti.
+- juurilaskuihin valitaan operaattorinapiksi "r"
+  * ensimmäisistä luvutsa otetaan toisen luvun juuri.
+  * Jos käyttäjä yrittää ottaa negatiivistesta arvosta juurta, ohjelma ei laske tulosta.
+
