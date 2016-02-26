@@ -12,12 +12,18 @@ Laskin muistaa muutamat yleisimmin käytetyt vakiot (esim. pii). Vakioihin viita
 
 **Ohjelman rakenteen kuvaus:** 
 ohjelmassa on kolme pakkausta: laskin.logiikka, laskin.main ja laskin.ui.
+  
   - laskin.logiikka sisältää luokat Laskutoimitus, Vakiomuistio ja Valinta.
+    
     * Laskutoimitus suorittaa laskun
     * Vakiomuistio sisältää HashMapin johon tallennetaan vakio ja sitä vastaava arvo, siitä voidaan hakea arvot laskutoimitusta varten
-    * Valinta luokka kommunikoi laskutoimituksen ja valinnan kanssa, sekä tarkistelee käyttäjän syötteiden oikeellisuuksia.   - laskin.main sisältää vain Main luokan
+    * Valinta luokka kommunikoi laskutoimituksen ja valinnan kanssa, sekä tarkistelee käyttäjän syötteiden oikeellisuuksia.   
+  - laskin.main sisältää vain Main luokan
+    
     * Main käynnistää ohjelman
+  
   -laskin.ui sisältää luokat Laskin, Komponentit ja Toiminta
+  
     *Laskin luokka rakentaa laskimen näkyvät osat: napit, panelit tekstikentän, sekä lisää näihin toiminnallisuuden.
     *Komponentit luokka luo osan komponenteista esim. napit ja asettelee ne paneliin.
     *Toiminta luokka sisältää nappien toiminnallisuuden.
