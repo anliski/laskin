@@ -23,6 +23,7 @@ ohjelmassa on kolme pakkausta: laskin.logiikka, laskin.main ja laskin.ui.
     * Main käynnistää ohjelman
   
   -laskin.ui sisältää luokat Laskin, Komponentit ja Toiminta.
+    
     * Laskin luokka rakentaa laskimen näkyvät osat: napit, panelit tekstikentän, sekä lisää näihin toiminnallisuuden.
     * Komponentit luokka luo osan komponenteista esim. napit ja asettelee ne paneliin.
     * Toiminta luokka sisältää nappien toiminnallisuuden.
