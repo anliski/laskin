@@ -1,4 +1,4 @@
-** Käyttöohjeet **
+**Käyttöohjeet**
 
 Kun ohjelma käynnistetään ilmastyy näytölle laskin, jossa ylimpänä tummanharmaalla pohjalla on neljä valikkonappia, keskellä valkoisella pohjalla on tekstikenttä ja alimpana on numeronappulat, opertaattorinappulat sekä muut toiminta nappulat.
 
