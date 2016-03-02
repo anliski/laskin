@@ -89,8 +89,6 @@ public class Laskutoimitus {
     
         if (this.luku2 != 0) {
             this.tulos = this.luku1 / this.luku2;
-        } else {
-            throw new IndexOutOfBoundsException("Nollalla ei voi jakaa.");
         }
     }
  /**

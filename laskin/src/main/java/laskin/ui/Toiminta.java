@@ -10,8 +10,8 @@ import laskin.logiikka.Laskutoimitus;
 import laskin.logiikka.Valinta;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Luokka sisältää nappien toiminnallisudet.
+
+/** Luokka sisältää nappien toiminnallisudet.
  */
 public class Toiminta {
     public Valinta valinta = new Valinta();
@@ -23,13 +23,11 @@ public class Toiminta {
     public String operaattori;
     public String luku2;       
     public ActionListener toiminta;
-/**
- * Konstruktori.
+/** Konstruktori.
  */ 
     public Toiminta() {
     }
-/**
- * Metodi lisää tulos operaattorinapille sen toiminnon.
+/** Metodi lisää tulos operaattorinapille sen toiminnon.
  * @param tulos nappi
  * @param tekstikentta 
  */    
@@ -40,11 +38,17 @@ public class Toiminta {
                 if (tila == 0) {
                     luku2 = tekstikentta.getText();
                     if ((valinta.voikoLuvunMaarittaa(luku2) == true)) {
-                        Laskutoimitus lasku = new Laskutoimitus(valinta.maaritaLuku(luku1), valinta.maaritaLuku(luku2), operaattori);
-                        lasku.laske();
-                        tekstikentta.setText(Double.toString(lasku.annaTulos()));
+                        if (operaattori.equals("/") && valinta.maaritaLuku(luku2) == 0) {
+                            JOptionPane.showMessageDialog(null, "Et voi jakaa nollalla");
+                        } else if (operaattori.equals("r") && valinta.maaritaLuku(luku2) < 0) {
+                            JOptionPane.showMessageDialog(null, "Ei reaalista juurta");
+                        } else {
+                            Laskutoimitus lasku = new Laskutoimitus(valinta.maaritaLuku(luku1), valinta.maaritaLuku(luku2), operaattori);
+                            lasku.laske();
+                            tekstikentta.setText(Double.toString(lasku.annaTulos()));
+                        }
                     }
-                }
+                }    
                 if (tila == 1) {                
                     if (valinta.tutkiOnkoVakioMuistissa(tekstikentta.getText()) == false & valinta.onkoNumero(tekstikentta.getText()) == false) {
                         symboli = tekstikentta.getText();
@@ -56,11 +60,9 @@ public class Toiminta {
             }
         });
     }
- /**
- * Metodi lisää tyhjennysnapille sen toiminnon.
+ /**Metodi lisää tyhjennysnapille sen toiminnon.
  * @param tyhjennys nappi
- * @param tekstikentta 
- */ 
+ * @param tekstikentta  */ 
     public void lisaaActionListenerTyhjennys(JButton tyhjennys, JTextField tekstikentta) {
         tyhjennys.addActionListener(new ActionListener() {
             @Override
@@ -71,12 +73,11 @@ public class Toiminta {
     }
  /** Metodi lisää kullekkin laskutoimitusnapille sen toiminnon.
  * @param operaattorit lista operaattorinapeista.
- * @param tekstikentta 
- */ 
+ * @param tekstikentta  */  
     public void lisaaActionListenerlaskutoimitusnapeille(ArrayList<JButton> operaattorit, JTextField tekstikentta) {    
         for (int i = 2; i <= 7; i++) {
             actionOperaattorit(tekstikentta, operaattorit.get(i)); 
-        }
+        }   
     }
  /** Metodi lisää kullekkin pilkkunapille sen toiminnon.
  * @param piste nappi.
@@ -116,7 +117,7 @@ public class Toiminta {
     }
 /** Metodi lisää määrittelee toiminta actionListenerin napille.
  * @param tekstikentta tekstikenttä
- * @param nappi 
+ * @param nappi   
  */ 
     public void actionOperaattorit(JTextField tekstikentta, JButton nappi) {
         toiminta = new ActionListener() {

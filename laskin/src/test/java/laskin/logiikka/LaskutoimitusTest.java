@@ -107,18 +107,14 @@ public class LaskutoimitusTest {
 //7.
     
     @Test
-    public void nollallaJakaminenAiheuttaaExceptionin(){
-        boolean thrown = false;
+    public void nollallaJakaminenEionnistu(){
+     
         laskutoimitus1 = new Laskutoimitus(8, 0 , "/");
         
-
-        try{
-            laskutoimitus1.laske();
-        }
-        catch(IndexOutOfBoundsException e){
-            thrown = true;}
+        laskutoimitus1.laske();
+    
         
-        assertTrue(thrown);
+        assertEquals(laskutoimitus1.tulos, 0, 0.0001);
  
     }
 
