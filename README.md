@@ -14,4 +14,4 @@ Huom! Ohjelma toimii laitoksen koneilla vain Netbeans+TMC:llä (ei siis netbeans
 
 [Käyttöohjeet](https://github.com/anliski/laskin/blob/master/dokumentointi/käyttöohjeet.md)
 
-[Testausdokumentaatio](https://github.com/anliski/laskin/blob/master/dokumentointi/testausdokumentaatio.md)
+[Testausdokumentaatio](https://github.com/anliski/laskin/blob/master/dokumentointi/testausdokumentti.md)
