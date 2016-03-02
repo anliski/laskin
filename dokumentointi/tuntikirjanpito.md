@@ -21,3 +21,4 @@
 |19.2.2016|  10.5h  | Koodikatselmointi, javadoc, sekvenssikaavioiden piirtäminen, checkstyle virheiden korjaaminen, testien muokkaaminen, aihemäärittelyn päivittäminen, luokkakaavion piirtäminen, uusi luokka Komponentit|
 |24.2.2016|  3h  | javadoc loppuun ja Toiminta luokan toiminnallisuuden viimeistelyä + metodien pilkkomista|
 |26.2.2016|  6h  | javadoc generointi, uusi pit, uusi checkstyle, toimivan jar tiedoston generointi, käyttöohjeet ohejlman rakenteen kuvausta, yleistä tarkistelua ja varmistelua|
+|3.2.2016|  2.25h  | pieniä koirjauksia, viimeistelyä, testausdokumentin kirjoitus|
